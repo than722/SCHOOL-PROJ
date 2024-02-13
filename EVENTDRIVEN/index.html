@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Manager</title>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Task Manager</h2>
+
+<form id="taskForm">
+    <input type="text" id="taskInput" placeholder="Enter task...">
+    <button type="submit">Add Task</button>
+</form>
+
+<table id="taskTable">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Tasks will be dynamically added here -->
+    </tbody>
+</table>
+
+<script>
+    // Function to create a new task
+    function createTask(task) {
+        var tableBody = document.getElementById("taskTable").getElementsByTagName("tbody")[0];
+        var newRow = tableBody.insertRow();
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        cell1.innerHTML = task;
+        cell2.innerHTML = '<button onclick="editTask(this)">Edit</button><button onclick="deleteTask(this)">Delete</button>';
+    }
+
+    // Function to add a task when form is submitted
+    document.getElementById("taskForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var taskInput = document.getElementById("taskInput");
+        if (taskInput.value.trim() !== "") {
+            createTask(taskInput.value);
+            taskInput.value = "";
+        }
+    });
+
+    // Function to edit a task
+    function editTask(button) {
+        var row = button.parentNode.parentNode;
+        var task = row.cells[0].innerHTML;
+        var newTask = prompt("Edit task:", task);
+        if (newTask !== null && newTask.trim() !== "") {
+            row.cells[0].innerHTML = newTask;
+        }
+    }
+
+    // Function to delete a task
+    function deleteTask(button) {
+        var row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+</script>
+
+</body>
+</html>
