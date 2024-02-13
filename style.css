@@ -5,8 +5,19 @@ body{
 }
 
 header{
+    position: fixed;
+    width: 100%;
     background-color: rgb(216, 126, 73);
   
+}
+
+.scrollable{
+    scroll-behavior: smooth;
+    height: calc(100%-150%);
+    width: 100%;
+    margin-top:50px;
+    overflow-y:scroll;
+    overflow-x: hidden;
 }
 
 h1{
