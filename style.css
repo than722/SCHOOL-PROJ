@@ -1,0 +1,144 @@
+body{
+    margin:0px;
+    padding:0%;
+    font-size: 1rem;
+}
+
+header{
+    background-color: rgb(216, 126, 73);
+  
+}
+
+h1{
+    float: left;
+    padding: 10px 10;
+    font-size: x-large;
+    margin-left: 20px;
+
+}
+header::after{
+    content:'';
+    display: table;
+    clear:both;
+}
+.navbar{
+    float:right;
+}
+
+.navbar ul{
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+}
+
+.navbar li{
+    display: inline-block;
+    margin-left: 20px;
+    padding-top: 21px;
+    margin-right: 40px;
+    position: relative;
+}
+
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size:14px;
+    font-weight: bolder;
+}
+
+.navbar a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.navbar a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+.navbar a:hover::before{
+    width: 100%;
+}
+
+.homepage{
+    background-color: rgb(204, 125, 50);
+    margin: 0;
+    padding:10px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h2{
+    font-size: x-large;
+}
+.homepage .p1{
+    font-size: 150%;
+    text-align: left;
+}
+
+.content1{
+    background-color: rgb(202, 132, 67);
+    margin: 0;
+    padding:10px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3{
+    font-size: x-large;
+}
+.content1 .p2{
+    font-size: 150%;
+    text-align: left;
+}
+
+.content2{
+    background-color: rgb(216, 127, 44);
+    margin: 0;
+    padding:10px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h4{
+    font-size: x-large;
+}
+.content2 .p3{
+    font-size: 150%;
+    text-align: left;
+}
+
+.content3{
+    background-color: rgb(206, 107, 15);
+    margin: 0;
+    padding:10px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h5{
+    font-size: x-large;
+}
+.content3 .p4{
+    font-size: 150%;
+    text-align: left;
+}
