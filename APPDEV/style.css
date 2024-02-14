@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth, !important;
+}
 body{
     margin:0px;
     padding:0%;
@@ -6,6 +9,9 @@ body{
 
 header{
     background-color: rgb(216, 126, 73);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Adjust as needed */
   
 }
 
@@ -23,6 +29,7 @@ header::after{
 }
 .navbar{
     float:right;
+    
 }
 
 .navbar ul{
