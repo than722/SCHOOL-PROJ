@@ -2,25 +2,34 @@
 <html>
 <head>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="script.js" defer></script>
 </head>
 <body>
 <div id="main" class="flex-container">
     <header>
         <div class="container1">
-            <h1>Philippine's History</h1>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <h1 class = "logo">Philippine's History</h1>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#spanish">The Spanish Period</a></li>
-                    <li><a href="#19th">The 19th Century</a></li>
-                    <li><a href="#revolution">The Philippine Revolution</a></li>
+                    <li><a href="#home" class = "poppins-bold">Home</a></li>
+                    <li><a href="#spanish" class = "poppins-bold">The Spanish Period</a></li>
+                    <li><a href="#19th" class = "poppins-bold">The 19th Century</a></li>
+                    <li><a href="#revolution" class = "poppins-bold">The Philippine Revolution</a></li>
                 </ul>
             </nav>
+            <label for="nav-toggle" class ="nav-toggle-label">
+                <span></span>
+            </label>
         </div>
     </header>
 <main>
     <div id = "home" class="homepage">
-    <h2>The Colonization of the Philippines</h2>
+        <div class = "text-block">
+    <h2 class = "poppins-bold">The Colonization of the Philippines</h2>
     <p class = "p1">
         The era spanning from 1565 to 1898 in Philippine history is referred to as the Spanish colonial period. 
         During this time, the Philippine Islands were governed as the Captaincy General of the Philippines within the Spanish East Indies, initially falling under the Viceroyalty of New Spain, headquartered in Mexico City. 
@@ -29,12 +38,13 @@
         In 1565, Spanish conquistadors, led by Miguel López de Legazpi, embarked on the conquest of the Philippines from modern-day Mexico. Their arrival coincided with the reign of Philip II of Spain, whose name became associated with the country. 
         The Spanish colonial era came to an end with Spain's defeat by the United States in the Spanish-American War, signaling the onset of the American colonial period in Philippine history.</p1>
     </div>
+    </div>
     <div id="spanish" class="content1">
-        
-            <h3>The Spanish Period</h3>
-            <p class = "p2">The Spanish colonial motives in the Philippines extended beyond mere commerce, initially aiming for access to the lucrative <a href="https://www.rmg.co.uk/stories/topics/spice-islands" target="_blank">Spice Islands</a>. 
+        <div class="text-block">
+            <h3 class = "poppins-bold">The Spanish Period</h3>
+            <p class = "p2">The Spanish colonial motives in the Philippines extended beyond mere commerce, initially aiming for access to the lucrative Spice Islands. 
                 Despite losing this opportunity to the Portuguese and Dutch, the Spanish persisted in their presence in the archipelago. 
-                <a href="https://www.britannica.com/biography/Ferdinand-Magellan" target="_blank">Ferdinand Magellan</a> led the first Spanish expedition to the Philippines in 1521, 
+                Ferdinand Magellan led the first Spanish expedition to the Philippines in 1521, 
                 but subsequent attempts by King Philip II resulted in disasters until Miguel López de Legazpi established the first permanent Spanish settlement in Cebu in 1565. 
                 By the late 16th century, most coastal and lowland areas were under Spanish control, with nominal conversion to Roman Catholicism.</p>
 
@@ -52,9 +62,10 @@
                Agricultural technology evolved slowly, with shifting cultivation giving way to sedentary farming under the guidance of the friars, reinforcing class differences and empowering the pre-Spanish noble class, 
                known as the principalia, within the friar-dominated local government.</p>
     </div>
-
+    </div>
     <div id = "19th" class="content2">
-        <h4>The 19th Century</h4>
+        <div class ="text-block">
+        <h4 class = "poppins-bold">The 19th Century</h4>
         <p class = "p3"> By the late 18th century, Europe's political and economic transformations were beginning to impact Spain and consequently the Philippines. 
             A significant catalyst for trade was the gradual dismantling of the galleon's monopoly route to Acapulco. The last galleon reached Manila in 1815, and by the mid-1830s, Manila had opened up to foreign merchants with minimal restrictions. 
             This led to increased demand for Philippine sugar and abaca (hemp), with exports to Europe surging further following the completion of the Suez Canal in 1869.</p>
@@ -71,9 +82,11 @@
         <p class = "p3">Shocked by Rizal's arrest, activists quickly formed the Katipunan under the leadership of Andres Bonifacio, a self-educated warehouseman. The Katipunan aimed at expelling the Spanish from the islands, preparing for armed rebellion. 
             While Filipino rebels had long existed under Spanish rule, it was the first time they were driven by nationalist aspirations and possessed the education necessary to turn their goals into reality.</p>
     </div>
+    </div>
 
     <div id="revolution" class="content3">
-        <h5>The Philippine Revolution</h5>
+        <div class="text-block">
+        <h5 class = "poppins-bold">The Philippine Revolution</h5>
         <p class = "p4">In August of 1896, Spanish friars uncovered evidence of the Katipunan's plans, leading its leaders to take action earlier than planned. Revolts erupted in several provinces around Manila. Despite months of fighting, severe Spanish retaliation forced the revolutionary armies to retreat to the hills. 
             In December 1897, a truce was reached with the Spanish. Emilio Aguinaldo, a municipal mayor and rebel forces commander, received a significant sum and was permitted to go to Hong Kong with other leaders, with promises of reforms from the Spanish. However, reforms were slow, and some rebel groups, 
             mistrustful of Spanish promises, retained their weapons, resulting in increased clashes.</p>
@@ -88,7 +101,8 @@
 
         <p class = "p4">The Filipino revolutionary movement, driven by both national and social goals, briefly achieved independence but was thwarted by the American decision to continue administering the islands. Efforts toward fundamental social change, such as the nationalization of friar lands by the Malolos Republic, were also hindered by entrenched institutions. 
             Despite these setbacks, the proclamation of a republic in 1898 marked the Philippines as the first Asian nation to resist European colonial rule.</p>
-    </div>
+        </div>
+        </div>
     
 </main>
 </div>
