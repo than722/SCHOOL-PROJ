@@ -216,7 +216,7 @@ h5 {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 300px) {
     h1 {
         font-size: large;
     }
@@ -256,6 +256,15 @@ h5 {
         top: 50%;
         transform: translate(-50%, -50%);
     }
+    .text-block {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%; /* Adjust the maximum width as needed */
+        padding: 10px; /* Adjust padding as needed */
+        font-size: smaller; /* Decrease font size */
+    }
 }
 
 /* Hide toggle on larger screens */
@@ -270,5 +279,10 @@ h5 {
         display: contents;
         position: absolute;
         right: 0;
+    }
+    
+    .navbar ul {
+        display: flex;
+        justify-content: flex-end; /* Adjust alignment as needed */
     }
 }
