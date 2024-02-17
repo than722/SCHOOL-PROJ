@@ -1,52 +1,110 @@
-body{
-    margin:0px;
-    padding:0%;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
     font-size: 1rem;
 }
 
-header{
+/* Header Styles */
+header {
+    background-color: rgb(216, 126, 73);
+    text-align: center;
     position: fixed;
     width: 100%;
-    background-color: rgb(216, 126, 73);
-  
+    z-index: 1000;
 }
 
-.scrollable{
-    scroll-behavior: smooth;
-    height: calc(100%-150%);
-    width: 100%;
-    margin-top:50px;
-    overflow-y:scroll;
-    overflow-x: hidden;
-}
-
-h1{
-    float: left;
-    padding: 10px 10;
+h1 {
+    margin: 0 auto;
+    padding: 10px;
     font-size: x-large;
-    margin-left: 20px;
-
+    max-width: 80%;
 }
-header::after{
-    content:'';
+
+header::after {
+    content: '';
     display: table;
-    clear:both;
-}
-.navbar{
-    float:right;
+    clear: both;
 }
 
-.navbar ul{
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: rgb(0, 0, 0);
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+.navbar {
+    position: absolute;
+    background-color: rgb(216, 126, 73);
+    text-align: left;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+.nav-toggle:checked ~ .navbar {
+    transform: scaleY(1);
+}
+
+.nav-toggle:checked ~ .navbar a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+.navbar ul {
     margin: 0;
-    padding: 0px;
+    padding: 0;
     list-style: none;
 }
 
-.navbar li{
+.navbar li {
     display: inline-block;
-    margin-left: 20px;
-    padding-top: 21px;
-    margin-right: 40px;
+    margin-left: 1em;
     position: relative;
 }
 
@@ -54,102 +112,163 @@ header::after{
     color: rgb(0, 0, 0);
     text-decoration: none;
     text-transform: uppercase;
-    font-size:14px;
-    font-weight: bolder;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+    position: relative;
+    right: 0;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: rgb(255, 255, 255);
 }
 
-.navbar a::before{
+.navbar a::before {
     content: '';
     display: block;
     height: 5px;
     width: 100%;
     background-color: rgb(255, 255, 255);
-
     position: absolute;
     top: 0;
     width: 0%;
     transition: all ease-in-out 250ms;
 }
 
-.navbar a:hover::before{
+.navbar a:hover::before {
     width: 100%;
 }
 
-.homepage{
+/* Sections Styles */
+.text-block {
+    position: absolute;
+    top: 50%;
+    left: 40%; /* Initial position */
+    transform: translate(-50%, -50%);
+    background-color: rgba(238, 141, 15, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1.5s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    left: 50%; /* Final position */
+}
+
+.homepage,
+.content1,
+.content2,
+.content3 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-position: center;
+    position: relative;
+}
+
+.homepage {
+    background-image: url("Colonization.webp");
     background-color: rgb(204, 125, 50);
-    margin: 0;
-    padding:10px;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-h2{
-    font-size: x-large;
-}
-.homepage .p1{
-    font-size: 150%;
-    text-align: left;
+    background-size: cover;
 }
 
-.content1{
+.content1 {
+    background-image: url("spanishperiod.jpg");
     background-color: rgb(202, 132, 67);
-    margin: 0;
-    padding:10px;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-size: cover;
 }
 
-h3{
-    font-size: x-large;
-}
-.content1 .p2{
-    font-size: 150%;
-    text-align: left;
-}
-
-.content2{
+.content2 {
+    background-image: url("19th.jpg");
     background-color: rgb(216, 127, 44);
-    margin: 0;
-    padding:10px;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-size: cover;
 }
 
-h4{
-    font-size: x-large;
-}
-.content2 .p3{
-    font-size: 150%;
-    text-align: left;
-}
-
-.content3{
+.content3 {
+    background-image: url("revolution.webp");
     background-color: rgb(206, 107, 15);
-    margin: 0;
-    padding:10px;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-size: cover;
 }
 
-h5{
+h2,
+h3,
+h4,
+h5 {
     font-size: x-large;
 }
-.content3 .p4{
-    font-size: 150%;
+
+.homepage .p1,
+.content1 .p2,
+.content2 .p3,
+.content3 .p4 {
+    font-size: 120%;
     text-align: left;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: large;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    .navbar {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: scaleY(1);
+        width: auto;
+        background-color: transparent;
+        text-align: center;
+        transition: none;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        display: block;
+    }
+
+    .text-block {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Hide toggle on larger screens */
+@media only screen and (min-width: 801px) {
+    .nav-toggle-label {
+        display: none;
+    }
+    .navbar{
+        display: contents;
+    }
+    .navbar a{
+        display: contents;
+        position: absolute;
+        right: 0;
+    }
 }
